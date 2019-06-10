@@ -13,18 +13,10 @@ class PostsController < ApplicationController
 		@post = Post.new(post_params)
 
 		if @post.save
-       respond_to do |format| 
-        format.html { redirect_to @post }
-        format.json { render :show, status: :created, location: @foo.model }
-        format.js 
-       end
-    else
-    	respond_to do |format|
-	      format.html { render :new }
-	      format.json { render json: @post.errors, status: :unprocessable_entity }
-	      format.js   { render layout: false, content_type: 'text/javascript' }
-    	end
-    end
+			redirect_to @post
+		else
+			render 'new'
+		end
 	end
 
 	def show

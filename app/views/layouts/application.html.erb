@@ -32,16 +32,12 @@
 	  <!-- Hero content: will be in the middle -->
 	  <div>
 	    <div class="container has-text-centered">
-
 	      <h1 class="title">
 	        <%= yield :page_title %>
 	      </h1>
 	    </div>
 	  </div>
 	</section>
-		<% flash.each do |key, value| %>
-			<div class="alert alert-<%= key %>"><%= value %></div>
-		<% end %>
     <%= yield %>
   </body>
 </html>
